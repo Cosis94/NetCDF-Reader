@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'form.ui'
+# Form implementation generated from reading ui file 'C:\Users\f.ekinci\Documents\NetCDF-Reader\form.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -42,6 +42,12 @@ class Ui_Widget(object):
         self.Upload_NCDATAButton = QtWidgets.QPushButton(Widget)
         self.Upload_NCDATAButton.setGeometry(QtCore.QRect(30, 50, 171, 29))
         self.Upload_NCDATAButton.setObjectName("Upload_NCDATAButton")
+        self.label = QtWidgets.QLabel(Widget)
+        self.label.setGeometry(QtCore.QRect(30, 120, 141, 20))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Widget)
+        self.label_2.setGeometry(QtCore.QRect(30, 140, 91, 20))
+        self.label_2.setObjectName("label_2")
 
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
@@ -55,6 +61,8 @@ class Ui_Widget(object):
         self.CSV_Exportbutton.setText(_translate("Widget", "CSV Export"))
         self.TXT_Exportbutton.setText(_translate("Widget", "TXT Export"))
         self.Upload_NCDATAButton.setText(_translate("Widget", "Upload NetCDF Data"))
+        self.label.setText(_translate("Widget", "Current Dimension:"))
+        self.label_2.setText(_translate("Widget", "Dimension"))
 
 
 if __name__ == "__main__":

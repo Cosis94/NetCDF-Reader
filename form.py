@@ -89,6 +89,13 @@ class Ui_Widget(object):
         self.Upload_NCDATAButton.setObjectName("Upload_NCDATAButton")
         self.Upload_NCDATAButton.clicked.connect(self.get_text_file)
 
+        self.label = QtWidgets.QLabel(Widget)
+        self.label.setGeometry(QtCore.QRect(30, 120, 141, 20))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Widget)
+        self.label_2.setGeometry(QtCore.QRect(30, 140, 91, 20))
+        self.label_2.setObjectName("label_2")
+
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
 
@@ -115,9 +122,10 @@ class Ui_Widget(object):
 
     def delete_set_one(self):
         self.temp_par = self.listWidget.currentItem().text()
-        self.Attr_Liste.remove(self.temp_par)
+        self.Attr_Liste.remove(self.temp_par)     
         self.listWidget.clear()
         self.listWidget.addItems(self.Attr_Liste)
+
 
     def DataFrame_ex(self):
         init_dict = {}
@@ -135,6 +143,9 @@ class Ui_Widget(object):
         self.set_one_par = self.comboBox.currentText()
         self.Attr_Liste.append(self.set_one_par)
         self.listWidget.addItems(self.Attr_Liste)
+        for k in self.ds[self.set_one_par].shape:
+            self.label_2.setText(self.set_one_par+" :" +str(k))
+
 
     def retranslateUi(self, Widget):
         _translate = QtCore.QCoreApplication.translate
@@ -145,6 +156,8 @@ class Ui_Widget(object):
         self.CSV_Exportbutton.setText(_translate("Widget", "CSV Export"))
         self.TXT_Exportbutton.setText(_translate("Widget", "TXT Export"))
         self.Upload_NCDATAButton.setText(_translate("Widget", "Upload NetCDF Data"))
+        self.label.setText(_translate("Widget", "Current Dimension:"))
+        self.label_2.setText(_translate("Widget", "Dimension"))
 
     def export_csv(self):
         path = self.new_File[:-3]+".csv"
